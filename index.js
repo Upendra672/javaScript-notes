@@ -651,7 +651,7 @@
 // console.log(myName);
 
 
-// const myName = "thapa technical";
+// const myName = "Upendra tech";
 // console.log(myName);
 
 // myName = "Upendra Yadav";
@@ -1587,7 +1587,7 @@
 
 // let myBioData = `I am Upendra Kumar Nathuram Yadav`;
 
-// let repalceData = myBioData.replace('Vinod','VINOD');
+// let repalceData = myBioData.replace('Upendra','Upendra');
 // console.log(repalceData);
 // console.log(myBioData);
 
@@ -1598,7 +1598,7 @@
 // 2: By default, the replace() method replaces only 
 // the first match
 // 3:By default, the replace() method is case sensitive. 
-// Writing VINOD (with upper-case) will not work
+// Writing Upendra (with upper-case) will not work
 
 
 
@@ -2000,3 +2000,381 @@
 
 
 // Section 10👉 Document Object model in JavaScript 
+
+// 1️⃣ Window is the main container or we can say the 
+// global Object and any operations related to entire 
+// browser window can be a part of window object. 
+
+// For ex 👉 the history or to find the url etc.
+
+// 1️⃣ whereas the DOM is the child of Window Object
+
+
+// // **********************************************************************
+
+
+
+
+// 2️⃣ All the members like objects, methods or properties. 
+// If they are the part of window object then we do not refer 
+// the window object. Since window is the global object 
+// so you do not have to write down window. 
+// - it will be figured out by the runtime.
+
+// For example
+// 👉 window.screen or just screen is a small information 
+// object about physical screen dimensions.
+// 👉 window.location giving the current URL
+// 👉 window.document or just document is the main object 
+// of the potentially visible (or better yet: rendered) 
+// document object model/DOM.
+  
+
+// 2️⃣ Where in the DOM we need to refer the document, 
+// if we want to use the document object, methods or properties
+// For example
+// 👉 document.getElementById()
+
+
+// 3️⃣ Window has methods, properties and object. 
+// ex setTimeout() or setInterval() are the methods 
+// where as Document is the object of the Window and 
+// It also has a screen object with properties 
+// describing the physical display.
+
+
+// Now, I know you have a doubt like we have seen the methods 
+// and object of the global object that is window. But What about
+// the properties of the Window Object 🤔
+
+// so example of window object properties are
+// innerHeight, 
+// innerWidth and there are many more 
+
+// let's see some practical in DOM HTML file
+
+
+
+
+// ************** DOM vs BOM *******************
+
+// 👉 The DOM is the Document Object Model, which deals with the document, 
+// the HTML elements themselves, e.g. document and all traversal you 
+// would do in it, events, etc.
+
+// For Ex: 👨‍🏫
+// change the background color to red
+// document.body.style.background = "red";
+
+
+// 👉 The BOM is the Browser Object Model, which deals with browser components 
+// aside from the document, like history, location, navigator and screen 
+// (as well as some others that vary by browser). OR 
+// In simple meaning all the Window operations which comes under BOM are performed 
+// usign BOM 
+
+
+
+
+// Let's see more practical on History object 
+
+// Functions alert/confirm/prompt are also a part of BOM: 
+// they are directly not related to the document, 
+// but represent pure browser methods of communicating with the user.
+
+// alert(location.href); // shows current URL
+// if (confirm("Want to Visit ThapaTechnical?")) {
+//   location.href = "https://www.youtube.com/thapatechnical"; // redirect the browser to another URL
+// }
+
+
+
+
+
+// Section 3️⃣: Navigate through the DOM 
+
+// 1: document.documentElement
+      // returns the Element that is the root element of the document. 
+// 2: document.head
+// 3: document.body
+// 4: document.body.childNodes (include tab,enter and whiteSpace)
+  // list of the direct children only 
+// 5: document.children (without text nodes, only regular Elements)
+// 6: document.childNodes.length
+
+// 👉 Practice Time 
+// How to check whether an element has child nodes or not?
+// we will use hasChildNodes()
+
+// 👉 Practice Time 
+// How to find the child in DOM tree 
+// firstChild vs firstElementChild
+// lastChild vs lastElementChild 
+// const data = document.body.firstElementChild;
+// undefined
+// data
+// data.firstElementChild
+// data.firstElementChild.firstElementChild
+// data.firstElementChild.firstElementChild.style.color = "red"
+// vs 
+// document.querySelector(".child-two").style.color = "yellow";
+
+// 👉 How to find the Parent Nodes 
+// document.body.parentNode
+// document.body.parentElement
+
+// 👉 How to find or access the siblings
+// document.body.nextSibling
+// document.body.nextElementSibling
+// document.body.previousSibling
+// document.body.previousElementSibling
+
+
+
+//SECTION 4️⃣:  How to search the Elements and the References 
+// We will see the new file 
+
+
+
+
+
+
+// **********************************************************************
+
+
+/**** Section 11👉 EVENTS in JavaScript ****/
+
+
+// HTML events are "things" that happen to HTML elements.
+// When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+
+
+// 👨‍🏫 HTML Events
+// An HTML event can be something the browser does, or something a user does.
+
+// Here are some examples of HTML events:
+
+// An HTML web page has finished loading
+// An HTML input field was changed
+// An HTML button was clicked
+// Often, when events happen, you may want to do something.
+
+// JavaScript lets you execute code when events are detected.
+
+// HTML allows event handler attributes, with JavaScript code, 
+// to be added to HTML elements.
+
+
+
+// section 1️⃣ 4 ways of writing Events in JavaScript
+
+// 1: using inline events alert();
+// 2: By Calling a funcion (We already seen and most common way of writing) 
+// 3: using Inline events (HTML onclick="" property and element.onclick)
+// 4: using Event Listeners (addEventListener and IE's attachEvent)
+
+// check the Events HTML File
+
+
+
+// section 2️⃣: What is Event Object?
+// Event object is the parent object of the event object. 
+// for Example 
+// MouseEvent, focusEvent, KeyboardEvent etc 
+
+
+
+// section ️3️⃣ MouseEvent in JavaScript
+// The MouseEvent Object
+// Events that occur when the mouse interacts with the HTML 
+// document belongs to the MouseEvent Object.
+
+
+
+// section ️4️⃣ KeyboardEvent  in JavaScript
+// Events that occur when user presses a key on the keyboard, 
+// belongs to the KeyboardEvent Object.
+// https://www.w3schools.com/jsref/obj_keyboardevent.asp
+
+
+// Section 5️⃣ InputEvents in JavaScript 
+// The onchange event occurs when the value of an element has been changed.
+
+// For radiobuttons and checkboxes, the onchange event occurs when the 
+// checked state has been changed.
+
+
+
+
+// **********************************************************************
+
+// 👉  JavaScript Timing Events
+
+// **********************************************************************
+
+
+// The window object allows execution of code at specified time intervals.
+
+// These time intervals are called timing events.
+
+// The two key methods to use with JavaScript are:
+
+// setTimeout(function, milliseconds)
+// Executes a function, after waiting a specified number of milliseconds.
+
+// setInterval(function, milliseconds)
+// Same as setTimeout(), but repeats the execution of the function continuously.
+
+
+// 1️⃣ setTimeout()
+
+// 2️⃣clearTimeout()
+
+// 3️⃣ setInterval()
+
+// 4️⃣ clearInterval()
+
+
+
+// **********************************************************************
+
+// 👉 object oriented Javascript
+
+// **********************************************************************
+
+
+// 1️⃣ What is Object Literal?
+
+// Object literal is simply a key:value pair data structure. 
+
+// Storing variables and functions together in one container, 
+// we can refer this as an Objects.
+
+// object = school bag 
+
+// How to create an Object?
+
+// 1st way 
+
+  // let bioData = { 
+  //     myName : "thapatechnical",
+  //     myAge : 26,
+  //     getData : function(){
+  //       console.log(`My name is ${bioData.myName} and my age is ${bioData.myAge}`);
+  //     }
+  // }
+
+  // bioData.getData();
+
+// 2nd way no need to write functions as well after es6
+
+// let bioData = { 
+//   myName : "thapatechnical",
+//   myAge : 26,
+//   getData (){
+//     console.log(`My name is ${bioData.myName} and my age is ${bioData.myAge}`);
+//   }
+// }
+
+// bioData.getData();
+
+
+// 👉 What if we want object as a value inside an Object 
+
+
+// let bioData = { 
+//   myName : {
+//     realName : "Upendra",
+//     channelName : "Upendra tech" 
+//   },
+//   myAge : 26,
+//   getData (){
+//     console.log(`My name is ${bioData.myName} and my age is ${bioData.myAge}`);
+//   }
+// }
+
+// console.log(bioData.myName.channelName );
+
+
+
+
+
+// 2️⃣ What is this Object?
+
+// The definition  of "this" object is that it contain the current context. 
+
+// The this object can have different values depending on where it is placed.  
+
+
+// // For Example 1 
+// console.log(this.alert('Awesome'));
+// // it refers to the current context and that is window global object 
+
+
+// // ex 2 
+// function myName() {
+//     console.log(this);
+// }
+// myName();
+
+
+
+// // ex 3 
+
+// var myNames = 'Upendra';
+// function myName() {
+//     console.log(this.myNames);
+// }
+// myName();
+
+
+// // ex 4 
+// const obj = {
+//     myAge : 26,
+//     myName() {
+//       console.log(this.myAge);
+//     }
+// }
+// obj.myName();
+
+// // ex 5 
+// // this object will not work with arrow function bcz arrow function is bound to class.
+
+// const obj = {
+//     myAge : 26,
+//     myName : () => {
+//       console.log(this);
+//     }
+// }
+// obj.myName();
+
+
+
+// // ex 6
+
+// let bioData = {
+//     myName : {
+//         realName : "Upendra thapa",
+//         channelName : 'Upendra tech'
+//     },
+//     // things to remember is that the myName is the key and the object is act like a value 
+//     myAge : 26,
+//     getData (){
+//       console.log(`My name is ${this.myName.channelName} and my age is ${this.myAge} `);
+//     }
+//   }
+
+//   bioData.getData();
+
+
+// // call method is used to call the method of another object 
+// // or with call(), an object can use a method belonging to another object 
+
+// // But as per other it is simply the way to use the this keyword or another object 
+
+
+
+
+
+
+// // **********************************************************************
